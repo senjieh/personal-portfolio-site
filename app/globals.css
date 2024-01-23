@@ -2,32 +2,208 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+body{
+  background-color: #f8f5e8;
+  color: #07111a;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@font-face {
+  font-family: 'SEQUEL100';
+  font-style: normal;
+  font-weight: normal;
+  src: local('SEQUEL100BLACK'), url('./fonts/SEQUEL100BLACK-85.TTF') format('truetype');
+}
+
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Poppins'), url('./fonts/POPPINS-MEDIUM.TTF') format('truetype');
+}
+
+
+.main-title-text{
+  font-size: 6vw;
+  line-height: 5vw;
+  transform: scaleX(1.08);
+}
+
+.main-portfolio-image{
+  height: 100%;
+  width: auto;
+  margin-left: -5%;
+}
+
+.main-portfolio-image img{
+  height: 100%;
+  width: auto;
+}
+
+@keyframes slideUpAndAppear {
+  0% {
+    visibility: hidden;
+    transform: translateY(10%);; /* Adjust for the desired slide-up effect */
+    opacity: 0;
+  }
+  1% {
+    visibility: visible;
+  }
+  100% {
+    visibility: visible; /* Keep the image visible after the animation ends */
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+
+.main-portfolio-image {
+  height: 100%;
+  width: auto;
+  margin-left: -5%;
+  bottom: 0; /* Start the animation from the bottom */
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.main-portfolio-image img {
+  height: 100%;
+  width: auto;
+  visibility: hidden; /* Initially hide the image */
+  animation-name: slideUpAndAppear; /* Updated animation name */
+  animation-duration: 0.5s;
+  animation-delay: 1.6s;
+  animation-fill-mode: forwards;
+}
+
+.App{
+  width: 100vw;
+  max-width: 1920px;
+  margin: auto; /* Auto margins for horizontal centering */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.main-contents{
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  height: 80%;
+}
+
+.lottie-container {
+  position: fixed; /* Fixed position to cover the whole screen */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  overflow: hidden; /* Ensures it doesn't make page bigger */
+}
+
+.lottie-container {
+  position: fixed; /* Fixed position to cover the whole screen */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  overflow: hidden; /* Ensures it doesn't make page bigger */
+}
+
+.animation-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%; /* Ensure the div takes the full width */
+  max-width: 1920px; /* Max width limit */
+  margin: auto; /* Auto margins for horizontal centering */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  z-index: -1; /* Places the animation behind the content */
+}
+
+.content {
+  position: relative;
+  z-index: 1; /* Ensures content is above the animation */
+  /* Your content styles here */
+}
+
+
+
+.iam-container {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  font-family: "Poppins";
+  font-size: 1vw;
+  height: 30px; /* Set this to the height of one text element */
+}
+
+.string {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  animation: move 4s infinite;
+}
+
+@keyframes move {
+  0%, 100% {
+    transform: translateY(-0%);
+  }
+  /* Assuming you have 4 texts, adjust if you have more or less */
+  25% {
+    transform: translateY(-100%);
+  }
+  50% {
+    transform: translateY(-200%);
+  }
+  75% {
+    transform: translateY(-300%);
   }
 }
+
+.animatedText {
+  display: inline-block;
+  font-size: 6vw;
+  line-height: 5vw;
+  transform: scaleX(1.08);
+  font-family: 'SEQUEL100', sans-serif;
+  letter-spacing: -0.4vw;
+}
+
+.letter {
+  display: inline-block;
+  transform: translateY(100%);
+  opacity: 0;
+  animation: popUp 0.6s forwards;
+}
+
+@keyframes popUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-20%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
