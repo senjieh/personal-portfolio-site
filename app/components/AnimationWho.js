@@ -23,11 +23,11 @@ const AnimatedWho = ({ precursorText, texts, fontSize }) => {
     };
 
     const stringStyle = {
-        animation: `move ${1 * texts.length}s infinite`, // Duration depends on the number of texts
+        animation: `move ${2 * texts.length}s infinite`, // Duration depends on the number of texts
         transform: 'translateY(0)',
         display: 'flex',
         flexDirection: 'column',
-        textAlign: 'center',
+        textAlign: 'left',
         marginLeft: '20px',
     };
 

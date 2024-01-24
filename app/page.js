@@ -58,8 +58,13 @@ export default function Home() {
             <LottieAnimation animationData={introAnimationData} />
           </div>
           <div className='flex items-center justify-center content-center justify-items-center z-10'>
+            
             {showTextAnimation && (
               <div className='flex flex-col content-center'>
+                <div className='mb-10'>
+                  <button className='animatedButton'>Hello! My name is</button>
+                </div>
+        
                 <AnimatedText text="JIE SEN"/>
                 <AnimatedText text="HUANG"/>
                 <div className="mt-20">
@@ -69,7 +74,7 @@ export default function Home() {
                     fontSize="2em"
                   />
                 </div>
-                </div>
+              </div>
             )}
             <div className='main-portfolio-image'>
               <Image

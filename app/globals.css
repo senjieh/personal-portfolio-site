@@ -207,3 +207,47 @@ body{
   }
 }
 
+
+.animatedButton {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  font-family: "Poppins";
+  position: relative;
+  background-color: transparent;
+  font-size: 1vw;
+  cursor: pointer;
+  overflow: hidden;
+  align-items: center;
+}
+
+.animatedButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 2px solid black;
+  border-radius: 20px; /* Match the border-radius of the button */
+  animation: drawBorder 2s linear forwards;
+}
+
+@keyframes drawBorder {
+  0% {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  }
+  25% {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  50% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  75% {
+    clip-path: polygon(0% 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  100% {
+    clip-path: polygon(0% 0, 100% 0, 100% 100%, 0% 100%);
+  }
+}
+
