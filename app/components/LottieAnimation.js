@@ -13,8 +13,12 @@ const LottieAnimation = ({ animationData, delay = 0, ...props }) => {
                 renderer: 'svg',
                 loop: false,
                 autoplay: true,
-                animationData: animationData
+                animationData: animationData,
+                rendererSettings: {
+                    preserveAspectRatio: 'xMidYMid slice' // This setting ensures full coverage
+                }
             });
+            
         }, delay);
 
         return () => {
@@ -25,7 +29,13 @@ const LottieAnimation = ({ animationData, delay = 0, ...props }) => {
         };
     }, [delay, animationData]);
 
-    return <div ref={animationContainer} {...props}></div>;
+    return (
+        <div 
+            ref={animationContainer} 
+            style={{ width: '100%', height: '100%' }} // Ensuring full width and height
+            {...props}
+        ></div>
+    );
 };
 
 export default LottieAnimation;

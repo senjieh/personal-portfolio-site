@@ -6,6 +6,7 @@ import introAnimationData from './animations/intro.json';
 import griddyAnimationData from './animations/griddy.json';
 import AnimatedText from './components/AnimatedText';
 import AnimatedWho from "./components/AnimationWho";
+import Link from 'next/link'
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -53,36 +54,49 @@ export default function Home() {
   return (
     <div>
       {isLoaded && (
-        <main className="flex min-h-screen w-full flex-col items-center justify-center">
-          <div className="fixed items-center justify-center object-left-top top-0 left-0 bottom-0 right-0 flex z-50">
-            <LottieAnimation animationData={introAnimationData} />
-          </div>
-          <div className='flex items-center justify-center content-center justify-items-center z-10'>
-            
-            {showTextAnimation && (
-              <div className='flex flex-col content-center'>
-                <div className='mb-10'>
-                  <button className='animatedButton'>Hello! My name is</button>
+        <main className="flex min-h-screen w-full flex-col items-center">
+          <nav className="fixed flex z-50"> 
+            <div className="mx-10">
+              <Link href="/">Home</Link>
+            </div>
+            <div className="mx-10">
+              <Link href="/about">About</Link>
+            </div>
+            <div className="mx-10">
+              <Link href="/contact">Contact</Link>
+            </div>
+          </nav>
+          <div className='flex flex-col items-center justify-center h-screen'>
+            <div className="fixed items-center justify-center object-left-top top-0 left-0 bottom-0 right-0 flex z-40">
+              <LottieAnimation animationData={introAnimationData} />
+            </div>
+            <div className='flex items-center justify-center content-center justify-items-center z-10'>
+              
+              {showTextAnimation && (
+                <div className='flex flex-col content-center'>
+                  <div className='mb-10'>
+                    <button className='animatedButton'>Hello! My name is</button>
+                  </div>
+          
+                  <AnimatedText text="JIE SEN"/>
+                  <AnimatedText text="HUANG"/>
+                  <div className="mt-20">
+                    <AnimatedWho
+                      precursorText="I am a "
+                      texts={["Developer", "Designer", "Editor", "Entrepreneur"]}
+                      fontSize="2vw"
+                    />
+                  </div>
                 </div>
-        
-                <AnimatedText text="JIE SEN"/>
-                <AnimatedText text="HUANG"/>
-                <div className="mt-20">
-                  <AnimatedWho
-                    precursorText="I am a "
-                    texts={["Developer", "Designer", "Editor", "Entrepreneur"]}
-                    fontSize="2em"
-                  />
-                </div>
+              )}
+              <div className='main-portfolio-image'>
+                <Image
+                  src="/images/portpic.png"
+                  width={500}
+                  height={500}
+                  alt="Picture of the author"
+                />
               </div>
-            )}
-            <div className='main-portfolio-image'>
-              <Image
-                src="/images/portpic.png"
-                width={500}
-                height={500}
-                alt="Picture of the author"
-              />
             </div>
           </div>
           <div className="fixed items-center justify-center object-left-top top-0 left-0 bottom-0 right-0 flex z-0">

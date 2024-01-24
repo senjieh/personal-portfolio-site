@@ -30,14 +30,14 @@ body{
 }
 
 .main-portfolio-image{
-  height: 100%;
-  width: auto;
+  height: auto;
+  width: 50%;
   margin-left: -5%;
 }
 
 .main-portfolio-image img{
-  height: 100%;
-  width: auto;
+  height: auto;
+  width: 100%;
 }
 
 @keyframes slideUpAndAppear {
@@ -56,13 +56,6 @@ body{
   }
 }
 
-
-.main-portfolio-image {
-  height: 100%;
-  width: auto;
-  margin-left: -5%;
-  bottom: 0; /* Start the animation from the bottom */
-}
 
 .main-portfolio-image img {
   height: 100%;
