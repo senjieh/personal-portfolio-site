@@ -8,18 +8,10 @@ body{
 }
 
 @font-face {
-  font-family: 'SEQUEL100';
+  font-family: 'gleffy';
   font-style: normal;
   font-weight: normal;
-  src: local('SEQUEL100BLACK'), url('./fonts/SEQUEL100BLACK-85.TTF') format('truetype');
-}
-
-
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Poppins'), url('./fonts/POPPINS-MEDIUM.TTF') format('truetype');
+  src: local('glefft'), url('./fonts/gleffy.TTF') format('truetype');
 }
 
 
@@ -244,3 +236,7 @@ body{
   }
 }
 
+h1 {
+  font-family: "gleffy";
+  font-size: 10vw;
+}
