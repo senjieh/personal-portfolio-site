@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import LottieAnimation from "./LottieAnimation";
 import introAnimationData from "../animations/intro.json";
+import Nav from "./nav"
 
 function useImageLoader() {
   const [isLoaded, setIsLoaded] = useState(false);
