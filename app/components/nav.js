@@ -11,18 +11,18 @@ import axios from 'axios';
 
 export default function Nav() {
   return (
-    <nav className="fixed flex z-50 -mb-20"> 
+    <nav className="nav"> 
         <div className="mx-10">
-        <Link href="/">HOME</Link>
+          <Link href="/" className="nav-link">HOME</Link>
         </div>
         <div className="mx-10">
-        <Link href="/about">ABOUT</Link>
+          <Link href="/about" className="nav-link">ABOUT</Link>
         </div>
         <div className="mx-10">
-        <Link href="/about">SOCIALS</Link>
+          <Link href="/about" className="nav-link">SOCIALS</Link>
         </div>
         <div className="mx-10">
-        <Link href="/contact">CONTACT</Link>
+          <Link href="/contact" className="nav-link">CONTACT</Link>
         </div>
     </nav>
   );
