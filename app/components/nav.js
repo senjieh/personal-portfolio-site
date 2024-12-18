@@ -12,16 +12,16 @@ import axios from 'axios';
 export default function Nav() {
   return (
     <nav className="nav"> 
-        <div className="mx-10">
+        <div id="link1" className="mx-10">
           <Link href="/" className="nav-link">HOME</Link>
         </div>
-        <div className="mx-10">
+        <div id="link2" className="mx-10">
           <Link href="/about" className="nav-link">ABOUT</Link>
         </div>
-        <div className="mx-10">
+        <div id="link3" className="mx-10">
           <Link href="/about" className="nav-link">SOCIALS</Link>
         </div>
-        <div className="mx-10">
+        <div id="link4" className="mx-10">
           <Link href="/contact" className="nav-link">CONTACT</Link>
         </div>
     </nav>

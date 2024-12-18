@@ -44,7 +44,7 @@ export default function Home() {
   const isLoaded = useImageLoader();
 
   return (
-    <main className="flex w-screen flex-col items-center">
+    <main className="flex flex-col items-center">
       <Nav />
       <div className="fixed inset-0 flex items-center justify-center z-40">
         {/* <LottieAnimation animationData={introAnimationData} /> */}
