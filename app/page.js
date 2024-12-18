@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Cursor, motion } from "framer-motion";
 import Image from "next/image";
 import LottieAnimation from "./components/LottieAnimation";
 import introAnimationData from "./animations/intro.json";
