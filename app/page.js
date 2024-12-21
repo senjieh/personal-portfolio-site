@@ -7,6 +7,8 @@ import introAnimationData from "./animations/intro.json";
 import Nav from "./components/nav"
 import InstagramGrid from "./components/InstagramGrid";
 
+/* Purpose of this is to wait for all images to load before starting the 
+animation. */
 function useImageLoader() {
   const [isLoaded, setIsLoaded] = useState(false);
 
