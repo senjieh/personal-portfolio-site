@@ -33,6 +33,7 @@ body{
   color: #666666;
   line-height: 100px;
   overflow: hidden;
+  z-index: 101;
 }
 
 
@@ -78,7 +79,7 @@ body{
   justify-content: space-between;
   margin-bottom: -100px;
   width: 66%;
-  z-index: 50;
+  z-index: 101;
   overflow: hidden;
 }
 
@@ -99,9 +100,9 @@ body{
 
 .h1sm {
   font-family: "gleffy";
-  font-size: 15vw;
-  line-height: 20vh;
-  letter-spacing: -0.4vw;
+  font-size: 5.5vw;
+  line-height: 5.5vw;
+  letter-spacing: -0.2vw;
   color: #1f1d1d;
 }
 
@@ -163,6 +164,20 @@ body{
 
 .headliner-container{
   height: 45vh;
+  overflow: hidden;
+  animation: headlinerContainerAnim 4s cubic-bezier(.75, 0, .25, 1) both;
+}
+
+.headliner-container-80{
+  white-space: nowrap;
+  height: 45vh;
+
+  animation: headlinerContainerAnim 4s cubic-bezier(.75, 0, .25, 1) both;
+}
+
+.headliner-container-20{
+  height: 45vh;
+  width: 20vw;
   overflow: hidden;
   animation: headlinerContainerAnim 4s cubic-bezier(.75, 0, .25, 1) both;
 }
