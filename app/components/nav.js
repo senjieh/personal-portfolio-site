@@ -16,9 +16,6 @@ export default function Nav() {
         <div id="link2" className="mx-10">
           <Link href="/about" className="nav-link">ABOUT</Link>
         </div>
-        <div id="link3" className="mx-10">
-          <Link href="/about" className="nav-link">SOCIALS</Link>
-        </div>
         <div id="link4" className="mx-10">
           <Link href="/contact" className="nav-link">CONTACT</Link>
         </div>

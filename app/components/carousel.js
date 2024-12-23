@@ -38,39 +38,41 @@ const Carousel = () => {
 
   // Scroll left button
   const scrollLeftFunc = () => {
-    scrollRef.current.scrollBy({ left: -200, behavior: "smooth" });
+    scrollRef.current.scrollBy({ left: -400, behavior: "smooth" });
   };
 
   // Scroll right button
   const scrollRightFunc = () => {
-    scrollRef.current.scrollBy({ left: 200, behavior: "smooth" });
+    scrollRef.current.scrollBy({ left: 400, behavior: "smooth" });
   };
 
   return (
     <div style={{ display: "flex", alignItems: "center" }}>
-      <button>Left</button>
+      <button onClick={scrollLeftFunc}>{"<"}</button>
       
       {/* Carousel Container: FIXED width + overflow */}
       <div
         ref={scrollRef}
         style={{
           display: "flex",
-          flexWrap: "nowrap",       // Prevent items from wrapping 
-          overflowX: "auto",        // or "scroll"
-          width: "100%",           // <-- fixed container width
-          border: "1px solid #ccc",
+          overflowX: "hidden",        // Use 'auto' instead of 'scroll' if you want the scrollbar only when needed
+          cursor: isDragging ? "grabbing" : "grab",
+          width: "100%",           // Adjust to your desired width
           margin: "0 10px",
-          cursor: "grab",
+          // IMPORTANT: We remove scrollBehavior: "smooth" here so we get immediate movement on drag
         }}
-        // onMouseDown, onMouseMove, etc.
+        onMouseDown={handleMouseDown}
+        onMouseLeave={handleMouseLeave}
+        onMouseUp={handleMouseUp}
+        onMouseMove={handleMouseMove}
       >
         {/* Carousel Items */}
         {Array.from({ length: 10 }, (_, i) => (
           <div
             key={i}
             style={{
-              minWidth: "200px",     // Adjust item width
-              height: "100px",
+              minWidth: "30%",     // Adjust item width
+              height: "50vh",
               margin: "5px",
               backgroundColor: "#eee",
               display: "flex",
@@ -83,7 +85,7 @@ const Carousel = () => {
         ))}
       </div>
       
-      <button>Right</button>
+      <button onClick={scrollRightFunc}>{">"}</button>
     </div>
   );
 }

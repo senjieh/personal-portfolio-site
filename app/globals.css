@@ -160,7 +160,9 @@ body{
   }
 }
 
-
+.projects-container{
+  width: 63vw;
+}
 
 .headliner-container{
   height: 45vh;
@@ -171,16 +173,28 @@ body{
 .headliner-container-80{
   white-space: nowrap;
   height: 45vh;
-
   animation: headlinerContainerAnim 4s cubic-bezier(.75, 0, .25, 1) both;
 }
-
+.cvbutton{
+  width: 100%;
+  margin: 2%;
+  border-radius: 50px;
+  border: 2px solid #07111a; /* Green */
+}
 .headliner-container-20{
   height: 45vh;
-  width: 20vw;
+  width: 16vw;
+  padding-left: 2vw;
   overflow: hidden;
   animation: headlinerContainerAnim 4s cubic-bezier(.75, 0, .25, 1) both;
 }
+
+.headliner-container p{
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.9vw;
+  line-height: 1.5vw;
+}
+
 
 .headliner-text-anim {
   transform-style: preserve-3d;
