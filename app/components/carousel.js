@@ -1,6 +1,21 @@
+import { Caramel } from "next/font/google";
 import React, { useRef, useState } from "react";
+import Image from 'next/image';
 
-const Carousel = () => {
+
+/**
+ * 
+ * @param {List} carouselData - A list of objects that contains data about each item within carousel:
+ * -- {string} name: Name of project that will be displayed onhover over carousel item
+ * -- {string} imageLink: Link to image
+ * -- {list} projectDescription: An object representing project description to be mapped into pop up modal
+ * -- -- {string} type: Link to image to be displayed
+ * -- -- {string} details: details of type: text, link to image
+ * @returns 
+ */
+
+
+const Carousel = ({carouselData}) => {
   const scrollRef = useRef(null);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
@@ -66,8 +81,7 @@ const Carousel = () => {
         onMouseUp={handleMouseUp}
         onMouseMove={handleMouseMove}
       >
-        {/* Carousel Items */}
-        {Array.from({ length: 10 }, (_, i) => (
+        {carouselData.map((x, i) => (          
           <div
             key={i}
             style={{
@@ -80,9 +94,14 @@ const Carousel = () => {
               justifyContent: "center",
             }}
           >
-            Item {i + 1}
-          </div>
-        ))}
+            <Image 
+            src={x.imageLink}
+            width={500}
+            height={500}
+            alt="img"
+            />
+          </div>))}
+
       </div>
       
       <button onClick={scrollRightFunc}>{">"}</button>

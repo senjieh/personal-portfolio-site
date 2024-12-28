@@ -1,47 +1,12 @@
 "use client"
 
 import { useState, useEffect } from "react";
+import aboutData from "../config/aboutData";
 import Image from "next/image";
 import Nav from "../components/nav"
 import Carousel from "../components/carousel";
 
-/* Purpose of this is to wait for all images to load before starting the 
-animation. */
-function useImageLoader() {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    const images = document.images;
-    const totalImages = images.length;
-    let loadedImages = 0;
-
-    const imageLoaded = () => {
-      loadedImages += 1;
-      if (loadedImages === totalImages) {
-        setIsLoaded(true);
-      }
-    };
-
-    for (let i = 0; i < totalImages; i++) {
-      if (images[i].complete) {
-        imageLoaded();
-      } else {
-        images[i].addEventListener("load", imageLoaded);
-        images[i].addEventListener("error", imageLoaded);
-      }
-    }
-
-    if (totalImages === 0 || loadedImages === totalImages) {
-      setIsLoaded(true);
-    }
-  }, []);
-
-  return isLoaded;
-}
-
-
-export default function Home() {
-  const isLoaded = useImageLoader();
+export default function About() {
 
   return (
     <main className="flex flex-col items-center">
@@ -64,7 +29,7 @@ export default function Home() {
 
         </div>
         <div className="projects-container">
-          <Carousel/>
+          <Carousel carouselData={aboutData}/>
         </div>
       </div>
     </main>
