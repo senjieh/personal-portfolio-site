@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-const InstagramGrid = () => {
+const InstagramGrid = ({ animState }) => {
 
     const image_files = [
         "/images/0.jpg",
@@ -60,7 +60,7 @@ const InstagramGrid = () => {
           </div>
         </div>
       </div>
-    );
+  );
   }
 
 export default InstagramGrid;
