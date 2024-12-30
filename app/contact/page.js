@@ -56,7 +56,7 @@ export default function Contact() {
             <h1 className={`${style.headlinerTextAnim}, ${style.h1sm}`}>Touch</h1>
           </div>
 
-          <div className={`${style.projectsContainer}`}>
+          <div className={`${style.inputContainer}`}>
             <form onSubmit={handleSubmit} >
               <input type="text" name="name" placeholder="Name" required/>
               <input type="email" name="email" placeholder="Email" required/>
