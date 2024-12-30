@@ -2,13 +2,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    height: 100vh;
 }
 
 
 .mainDiv{
     width: 66%;
+    padding-top: 10vh;
+    height: 100vh;
     animation: mainDivContainerIntro 4s cubic-bezier(.75, 0, .25, 1) both;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 
@@ -27,10 +32,7 @@
 .headlinerContainerAnim{
     display: flex;
     flex-direction: row;
-    height: 45vh;
-    overflow: hidden;
     animation: headlinerContainerAnim 1s cubic-bezier(.75, 0, .25, 1) both;
-    justify-content: center;
 }
 
 .headlinerContainerAnim p{
@@ -50,14 +52,11 @@
 
 .headlinerContainer80{
     white-space: nowrap;
-    height: 45vh;
     animation: headlinerContainerAnim 1.2s cubic-bezier(.75, 0, .25, 1) both;
     display: flex;
     flex-direction: column;
-    align-self: center;
+    align-self: end;
     justify-content: end;
-    height: 45vh;
-    overflow: hidden;
     width:70%;
 }
 
@@ -70,7 +69,6 @@
 }
 
 .headlinerContainer20{
-    height: 45vh;
     width: 30%;
     padding-left: 2vw;
     overflow: hidden;
