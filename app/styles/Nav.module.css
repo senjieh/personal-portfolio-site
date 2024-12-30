@@ -1,0 +1,64 @@
+@keyframes headlinerTextAnim {
+    0%{
+      transform: translate3d(0px, 12rem, 0px) scale3d(1, 1, 1) rotateX(-120deg) rotateY(0deg) rotateZ(0deg) skew(-12deg, 0deg); 
+    }
+    50% { 
+      transform: translate3d(0px, 12rem, 0px) scale3d(1, 1, 1) rotateX(-120deg) rotateY(0deg) rotateZ(0deg) skew(-12deg, 0deg); 
+    }
+    100% { 
+      transform: translate3d(0px, 0rem, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); 
+    }
+}
+
+
+#link1Intro{
+    animation: headlinerTextAnim 4s 1s cubic-bezier(.75, 0, .25, 1) both;
+    overflow: hidden;
+}
+
+#link2Intro{
+    animation: headlinerTextAnim 4s 1.5s cubic-bezier(.75, 0, .25, 1) both;
+    overflow: hidden;
+}
+#link3Intro{
+    animation: headlinerTextAnim 4s 2s cubic-bezier(.75, 0, .25, 1) both;
+    overflow: hidden;
+}
+
+#link1{
+    animation: none;
+    overflow: hidden;
+}
+
+#link2{
+    animation: none;
+    overflow: hidden;
+}
+#link3{
+    animation: none;
+    overflow: hidden;
+}
+
+.navDiv{
+    margin-right: 10px;
+}
+
+.navLink {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size:  24px;
+    color: #666666;
+    line-height: 100px;
+    overflow: hidden;
+    z-index: 101;
+}
+  
+.nav{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: -100px;
+    width: 66%;
+    z-index: 101;
+    overflow: hidden;
+  }

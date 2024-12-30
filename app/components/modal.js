@@ -1,38 +1,37 @@
 
+import style from "../styles/Modal.module.css"
+import Image from "next/image";
+
+
 /**
  * 
  * @param {*} param0 
  * @returns 
  */
-const Modal = ({ onClose }) => {
+
+
+export default function Modal ({ mData,  onClose }) {
+
     return (
-      <div style={backdropStyle} onClick={onClose}>
-        <div style={modalStyle} onClick={(e) => e.stopPropagation()}>
-          <h2>Modal Title</h2>
-          <p>This is a pop-up modal.</p>
-          <button onClick={onClose}>Close</button>
+      <div className={style.backdropStyle} onClick={onClose}>
+        <div className={style.modalStyle} onClick={(e) => e.stopPropagation()}>
+          <div>
+            <button onClick={onClose}>X</button>
+          </div>
+          <div className={style.contentDiv}>
+            <h2>{mData.name}</h2>
+            <Image src={mData.imageLink} width="1920" height="500"/>
+            {mData.description.map((x, i) => {
+              if (x.type == "text"){
+                return (<p>{x.details}</p>)
+              } else if(x.type == "image"){
+                return (<Image src={x.details} width="1920" height="500"/>)
+              } else if(x.type == "header"){
+                return (<h3>{x.details}</h3>)
+              }
+            })}
+          </div>
         </div>
       </div>
     );
   };
-  
-  const backdropStyle = {
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  };
-  
-  const modalStyle = {
-    backgroundColor: 'white',
-    padding: '20px',
-    borderRadius: '8px',
-    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-    minWidth: '300px',
-  };
-  

@@ -1,6 +1,8 @@
 import { Caramel } from "next/font/google";
 import React, { useRef, useState } from "react";
 import Image from 'next/image';
+import aboutData from "../config/aboutData";
+import style from "../styles/Carousel.module.css"
 
 
 /**
@@ -15,11 +17,13 @@ import Image from 'next/image';
  */
 
 
-const Carousel = ({carouselData}) => {
+const Carousel = ({modalPipeline}) => {
+  const carouselData = aboutData
   const scrollRef = useRef(null);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
+
 
   // Mouse down
   const handleMouseDown = (e) => {
@@ -32,6 +36,7 @@ const Carousel = ({carouselData}) => {
 
   // Mouse up
   const handleMouseUp = () => {
+    console.log("test");
     setIsDragging(false);
   };
 
@@ -86,20 +91,35 @@ const Carousel = ({carouselData}) => {
             key={i}
             style={{
               minWidth: "30%",     // Adjust item width
+              width: "30%",
               height: "50vh",
               margin: "5px",
               backgroundColor: "#eee",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
+              position: "relative"
+            }}
+            onClick={()=> {
+              console.log("tyeat");
+              console.log(x)
+              modalPipeline(x)
             }}
           >
-            <Image 
-            src={x.imageLink}
-            width={500}
-            height={500}
-            alt="img"
-            />
+              <div className={style.overlayDiv}>
+                <p>
+                  {x.name}
+                </p>
+              </div>
+              <Image 
+              className={style.carouselImg}
+              src={x.imageLink}
+              width={1000}
+              height={1000}
+              alt="img"
+              draggable="false"
+              />
+
           </div>))}
 
       </div>

@@ -195,13 +195,11 @@ body{
   line-height: 1.5vw;
 }
 
-
 .headliner-text-anim {
   transform-style: preserve-3d;
   animation: headlinerTextAnim 4s cubic-bezier(.75, 0, .25, 1) both;
 
 }
-
 
 .ig-grid-container{
   height: 55vh;

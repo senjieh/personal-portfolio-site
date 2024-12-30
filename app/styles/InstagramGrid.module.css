@@ -1,0 +1,62 @@
+
+
+.ig-grid-container{
+    height: 55vh;
+    animation: IGContainerIntro 4s cubic-bezier(.75,0,.25,1) both;
+    width: 100%;
+  }
+  
+  .instagram-grid {
+    height: 100%; /* Ensure the grid takes up full height */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .igr {
+    display: flex;
+    flex-direction: row;
+    height: 33%; /* Make the row fill the parent container */
+    width: 100%;
+    padding: 0.5rem;
+    animation: introIGRow1 4s cubic-bezier(.75,0,.25,1) both;
+  }
+  
+  .igr2 {
+    display: flex;
+    flex-direction: row;
+    height: 60%; /* Make the row fill the parent container */
+    width: 100%;
+    padding: 0.5rem;
+    animation: introIGRow2 4s cubic-bezier(.75,0,.25,1) both;
+  }
+  
+  .igr1c1,
+  .igr1c2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  
+  .igr1c1 {
+    animation: introIGCol1 4s cubic-bezier(.75,0,.25,1) both;
+    width: 50%; /* Set the column width */
+  }
+  
+  .igr1c2 {
+    animation: introIGCol2 4s cubic-bezier(.75,0,.25,1) both;
+    width: 100%; /* Set the column width */
+  }
+  
+  .igr1c1 img,
+  .igr1c2 img {
+    width: 100%; /* Make the images fill their containers horizontally */
+    height: 100%;
+    object-fit: cover; /* Ensure the images maintain their aspect ratio */
+  }
+  
