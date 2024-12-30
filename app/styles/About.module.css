@@ -42,12 +42,19 @@
 }
 
 
-.cvbutton{
+.cvbutton {
     width: 100%;
     margin: 2%;
     border-radius: 50px;
     border: 2px solid #07111a;
+    text-align: center;
+    line-height: 1.5;
+    display: flex;
+    padding: 10px 20px; 
+    text-decoration: none; 
+    font-size: 16px;
 }
+
 
 
 .headlinerContainer80{

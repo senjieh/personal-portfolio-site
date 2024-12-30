@@ -5,6 +5,7 @@ import Nav from "../components/nav"
 import Carousel from "../components/carousel";
 import Modal from "../components/modal"
 
+import Link from 'next/link'
 import style from "../styles/About.module.css"
 
 export default function About() {
@@ -26,7 +27,7 @@ export default function About() {
             <h1 className={`${style.headlinerTextAnim}, ${style.h1sm}`}>software engineer</h1>
             <div className={`${style.headlinerContainer20Bottom}`}>
               <h1 className={`${style.headlinerTextAnim}, ${style.h1sm}`}>for you</h1>
-              <button className={style.cvbutton} href="/docs/JieSenHuangResume2025.pdf">view CV</button>
+              <Link className={style.cvbutton} href="/docs/JieSenHuangResume2025.pdf" passHref>view CV</Link>
             </div>
           </div>
           <div className={style.headlinerContainer20}>
