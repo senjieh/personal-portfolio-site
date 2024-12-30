@@ -17,7 +17,9 @@ export default function Contact() {
     event.preventDefault();
     const formData = new FormData(event.target);
 
-    const access_key = process.env.EMAIL_TOKEN; 
+    const access_key = process.env.NEXT_PUBLIC_EMAIL_TOKEN; 
+    console.log("rfew");
+    console.log(access_key);
     formData.append("access_key", access_key);
 
     const object = Object.fromEntries(formData);
