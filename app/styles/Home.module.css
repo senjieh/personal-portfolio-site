@@ -55,7 +55,6 @@
   .mainDivAnim {
     width: 66%;
     height: 100%;
-    animation-delay: 0ms;
     animation: mainDivContainerAnim 1s cubic-bezier(0.75, 0, 0.25, 1) both;
   }
 
@@ -125,7 +124,6 @@
     object-fit: contain;
     transform: translateX(-50%);
     z-index: 100;
-    animation-delay: 500ms;
     animation: pSelfImgAnimation 1.5s cubic-bezier(0.75, 0, 0.25, 1) both;
   }
   
@@ -171,7 +169,6 @@
     align-items: flex-end;
     justify-content:space-between;
     overflow: hidden;
-    animation-delay: 50ms;
     animation: headlinerContainerAnim 1.1s cubic-bezier(.75, 0, .25, 1) both;
   }
 
@@ -212,7 +209,6 @@
     letter-spacing: -0.4vw;
     color: #1f1d1d;
     transform-style: preserve-3d;
-    animation-delay: 250ms;
     animation: headlinerTextAnim 1.1s cubic-bezier(.75, 0, .25, 1) both;
   }
   
@@ -257,7 +253,6 @@
     align-items: flex-end;
     justify-content: space-between;
     height: 55vh;
-    animation-delay: 100ms;
     animation: IGContainerAnim 1s cubic-bezier(0.75, 0, 0.25, 1) both;
     width: 100%;
   }

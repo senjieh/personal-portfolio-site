@@ -18,7 +18,7 @@ const aboutData = [{
   {
     "name": "Portfolio Site",
     "imageLink": "/images/PP_1.jpg",
-    "description": [{"type": "text", "details": "something"}]
+    "description": [{"type": "text", "details": "The current website!"}]
   }
 ]
 
